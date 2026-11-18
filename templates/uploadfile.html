@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}
+upload files - SNS
+{% endblock %}
+
+{% block navmenu %}
+    <a href= "{{url_for('myfiles')}}">Files</a>
+    <a href= "{{url_for('mynotes')}}">Notes</a>
+    
+{% endblock %}
+
+
+{% block content %}
+<div class="form-container">
+    <h1>
+       upload files
+    </h1>
+    <p class="form-subtitle">
+        Upload New Files for your Reference
+    </p>
+     {% if err %}
+  <p style="color: red">{{err}}</p>
+  {% endif %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-info" role="alert">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+    <form 
+        method="POST"
+        action="{{url_for('upload_file')}}"
+        enctype="multipart/form-data"
+
+    >
+    <div class="form-group">
+        <label for="file">
+            File 
+        </label>
+        <input
+            type="file"
+            id="file"
+            name="file"
+            placeholder="upload your file"
+            required
+        >
+    </div>
+    
+    <button
+        type="submit"
+        class="btn btn-primary full-width"
+    >
+        Save Files
+    </button>
+</form>
+</div>
+{% endblock %}

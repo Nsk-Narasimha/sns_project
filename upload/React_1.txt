@@ -1,0 +1,64 @@
+1. What is a component in React?
+Expected answer: A component is a reusable piece of UI. Usually it is a JavaScript function that returns JSX.
+function Button() {
+  return <button>Click me</button>;
+}
+
+2. What is the difference between == and ===?
+Expected:
+5 == "5"   // true
+5 === "5"  // false
+
+== performs type coercion.
+=== checks both type and value.
+
+3. Difference between let, const, and var?
+Expected:
+const
+- block scoped
+- cannot be reassigned
+let
+- block scoped
+- can be reassigned
+var
+- function scoped
+- hoisted differently
+- generally avoided in modern JavaScript
+
+4. What is the difference between map, filter, and find?
+Given:
+const users = [
+  { id: 1, age: 20 },
+  { id: 2, age: 25 },
+  { id: 3, age: 17 }
+];
+
+map
+Transforms every element.
+users.map(user => user.age);
+
+filter
+Returns all matching elements.
+users.filter(user => user.age >= 18);
+
+find
+Returns the first matching element.
+users.find(user => user.id === 2);
+
+5. What is useState used for?
+Expected: To store and update state inside a functional component.
+
+6. What is the difference between props and state?
+Expected: Props are passed from parent to child. State is managed inside the component and can change.
+
+7. What is localStorage?
+Answer: Browser storage that keeps data even after the browser is closed, until it is removed.
+
+8. What is sessionStorage?
+Answer: Browser storage that usually lasts only for the current browser tab/session.
+
+9. What is the difference between GET and POST?
+Answer: GET is generally used to retrieve data. POST is generally used to create or send data.
+
+10. What is the difference between a parent component and a child component?
+Answer: A parent renders another component, which becomes its child. Data is commonly passed from parent to child through props.
